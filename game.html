@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Score</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>🎮 Mini Game</h2>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="game.html">Play</a>
+            <a href="score.html">Score</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+     <main class="game-page">
+
+        <h1>🎯 Catch the Box</h1>
+
+        <div class="game-info">
+            <div>Score: <span id="score">0</span></div>
+            <div>Time: <span id="time">30</span></div>
+        </div>
+
+        <div id="gameArea">
+            <button id="box"></button>
+        </div>
+
+        <button class="btn" onclick="startGame()">
+            Start Game
+        </button>
+
+        <p id="message"></p>
+
+    </main>
+
+    <script>
+
+        let score = 0;
+        let time = 30;
+        let gameRunning = false;
+        let timer;
+
+        const box = document.getElementById("box");
+        const gameArea = document.getElementById("gameArea");
+
+        function startGame() {
+
+            score = 0;
+            time = 30;
+            gameRunning = true;
+
+            document.getElementById("score").textContent = score;
+            document.getElementById("time").textContent = time;
+            document.getElementById("message").textContent = "";
+
+            box.style.display = "block";
+
+            moveBox();
+
+            clearInterval(timer);
+
+            timer = setInterval(function () {
+
+                time--;
+
+                document.getElementById("time").textContent = time;
+
+                if (time <= 0) {
+
+                    clearInterval(timer);
+
+                    gameRunning = false;
+
+                    box.style.display = "none";
+
+                    localStorage.setItem("lastScore", score);
+
+                    document.getElementById("message").textContent =
+                        "Game Over! Score: " + score;
+
+                }
+
+            }, 1000);
+        }
+
+        box.addEventListener("click", function () {
+
+            if (!gameRunning) {
+                return;
+            }
+
+            score++;
+
+            document.getElementById("score").textContent = score;
+
+            moveBox();
+        });
+
+        function moveBox() {
+
+            const maxX = gameArea.clientWidth - box.offsetWidth;
+            const maxY = gameArea.clientHeight - box.offsetHeight;
+
+            const x = Math.floor(Math.random() * maxX);
+            const y = Math.floor(Math.random() * maxY);
+
+            box.style.left = x + "px";
+            box.style.top = y + "px";
+        }
+
+    </script>
+
+</body>
+</html>
