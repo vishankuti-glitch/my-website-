@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Navigation */
+
+nav {
+    height: 70px;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav h2 {
+    color: #667eea;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+
+    margin-left: 20px;
+
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #667eea;
+}
+
+.hero{
+    min-height:calc(100vh-120px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+}
+
+.hero h1{
+    font-size:50px;
+    color:white;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:600px;
+    color:white;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+.btn{
+      display: inline-block;
+
+    text-decoration: none;
+
+    background: white;
+    color: #667eea;
+
+    border: none;
+
+    padding: 13px 30px;
+
+    border-radius: 25px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    background:#f1f1f1;
+}
+
+.game-page {
+    width: 750px;
+    max-width: 90%;
+
+    margin: 40px auto;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    text-align: center;
+}
+
+.game-page h1 {
+    margin-bottom: 20px;
+}
+
+.game-info {
+    display: flex;
+
+    justify-content: space-around;
+
+    background: #f1f1f1;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+
+    font-size: 18px;
+}
+
+.game-info span {
+    font-weight: bold;
+    color: #667eea;
+}
+
+#gameArea {
+    height: 350px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 3px solid #667eea;
+
+    border-radius: 15px;
+
+    background: #e8eaf6;
+
+    margin-bottom: 20px;
+}
+
+#box{
+    width:50px;
+    height:50px;
+    position:absolute;
+    background:#ff4757;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    transition:transform 0.1s;
+}
+
+
+#box:hover {
+    transform: scale(1.2);
+}
+
+#message {
+    margin-top: 20px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #667eea;
+}
+
+/* Score */
+
+.score-page {
+    text-align: center;
+
+    padding-top: 80px;
+}
+
+.score-page h1 {
+    color: white;
+
+    margin-bottom: 30px;
+}
+
+.score-card{
+    background:white;
+    width:400px;
+    max-width:90%;
+    margin:auto;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0.2);
+}
+
+.score-card h2{
+    margin-bottom:15px;
+}
+
+#finalScore{
+    font-size:70px;
+    font-weight:bold;
+    color:#667eea;
+    margin-bottom:15px;
+}
+.score-card p {
+    margin-bottom: 25px;
+}
+
+/* About */
+
+.about {
+    background: white;
+
+    width: 700px;
+    max-width: 90%;
+
+    margin: 60px auto;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    line-height: 1.7;
+}
+
+.about h1 {
+    text-align: center;
+
+    color: #667eea;
+
+    margin-bottom: 25px;
+}
+
+.about h2 {
+    margin-top: 25px;
+
+    margin-bottom: 10px;
+}
+
+.about ul {
+    margin: 15px 0 30px 25px;
+}
+
+/* Footer */
+
+footer {
+    background: white;
+
+    text-align: center;
+
+    padding: 15px;
+}
+
+footer p {
+    color: #666;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    nav {
+        height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
+    }
+
+    nav div {
+        margin-top: 15px;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .game-page {
+        margin-top: 25px;
+    }
+
+    #gameArea {
+        height: 300px;
+    }
+}
+
