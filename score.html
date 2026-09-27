@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Score</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>🎮 Mini Game</h2>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="game.html">Play</a>
+            <a href="score.html">Score</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <section class="score-page">
+
+        <h1>🏆 Your Result</h1>
+
+        <div class="score-card">
+
+            <h2>Last Score</h2>
+
+            <div id="finalScore">0</div>
+
+            <p>Keep playing and try to beat your score!</p>
+
+            <a href="game.html" class="btn">
+                Play Again
+            </a>
+
+        </div>
+
+    </section>
+
+    <script>
+
+        let score = localStorage.getItem("lastScore");
+
+        if (score !== null) {
+            document.getElementById("finalScore").textContent = score;
+        }
+
+    </script>
+
+</body>
+</html>
